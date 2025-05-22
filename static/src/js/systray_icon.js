@@ -30,7 +30,7 @@ class SystrayIcon extends Component {
                     this.notification.add(_t("Please enter text to generate QR code"), {
                         type: "warning",
                     });
-                    return;
+                    return false;
                 }
                 this.notification.add(_t("QR code Generated Successfully"), {
                     type: "success",
@@ -52,7 +52,6 @@ class SystrayIcon extends Component {
                     },
                     cancelLabel : _t("Cancel"),
                     cancel: () => { },
-
                 });
             },
             cancelLabel: _t("Reset"),
@@ -61,9 +60,10 @@ class SystrayIcon extends Component {
                 if (inputField) {
                     inputField.value = '';
                 }
+                return false;
             },
-
         });
+
     }
 }
 

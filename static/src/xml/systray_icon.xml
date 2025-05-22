@@ -5,7 +5,7 @@
             <i
                 class="fa fa-qrcode o_nav_entry"
                 title="My Custom Icon"
-                style="cursor: pointer; font-size: 30px;"
+                style="cursor: pointer; font-size: 25px;"
                 t-on-click="showPopup"
             />
         </div>
