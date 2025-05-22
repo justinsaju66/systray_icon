@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="systray_icon" owl="1">
+        <div class="d-flex">
+            <i
+                class="fa fa-qrcode o_nav_entry"
+                title="My Custom Icon"
+                style="cursor: pointer; font-size: 30px;"
+                t-on-click="showPopup"
+            />
+        </div>
+    </t>
+</templates>
