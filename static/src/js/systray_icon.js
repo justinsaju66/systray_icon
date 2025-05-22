@@ -24,10 +24,10 @@ class SystrayIcon extends Component {
             confirmLabel: _t("Generate"),
             confirm: async () => {
                 console.log(document.getElementById('qrInput').value)
-                const qrInputValue = document.getElementById('qrInput').value.trim();
+                const qrInputText = document.getElementById('qrInput').value.trim();
 
-                if (!qrInputValue) {
-                    this.notification.add(_t("Please enter text to generate the QR code."), {
+                if (!qrInputText) {
+                    this.notification.add(_t("Please enter text to generate QR code"), {
                         type: "warning",
                     });
                     return;
@@ -42,6 +42,17 @@ class SystrayIcon extends Component {
                     title: _t("QR Code"),
                     body: markup(`
                         <img src="${qr_code}" alt="QR Code" style="max-width: 100%;"/>`),
+                    confirmClass: "btn-primary",
+                    confirmLabel: _t("Download"),
+                    confirm: async () => {
+                    const link = document.createElement('a');
+                    link.href = qr_code;
+                    link.download = 'qr_code.png';
+                    link.click();
+                    },
+                    cancelLabel : _t("Cancel"),
+                    cancel: () => { },
+
                 });
             },
             cancelLabel: _t("Reset"),
@@ -51,7 +62,6 @@ class SystrayIcon extends Component {
                     inputField.value = '';
                 }
             },
-            closeDialog: false,
 
         });
     }
