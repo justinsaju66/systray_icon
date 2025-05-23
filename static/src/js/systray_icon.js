@@ -29,19 +29,29 @@ class SystrayIcon extends Component {
                 }
         const response = await rpc('/generate-qr-code', { text: qrInputText });
         this.state.qr_code = response.qr_code;
-        const button = document.getElementById('downloadQRCode')
-        if (response){
-            async downloadFunction = downloadQRCode() {
-                const link = document.createElement('a');
-                link.href = qr_code;
-                link.download = 'qr_code.png';
-                link.click();
-                }
-        else {
-            button.style.display = 'none';
-          }
+        if (this.state.qr_code){
+            const generateBtn = document.getElementById('generate-btn');
+            generateBtn.style.display = 'none';
         }
+        const downloadBtn = document.getElementById('download-btn');
+        downloadBtn.style.display = 'inline';
+
     }
+
+    async downloadQRCode() {
+        event.stopPropagation();
+        if (!this.state.qr_code) {
+        this.notification.add(_t("Please generate a QR code."), {
+            type: "warning",
+        });
+        return;
+    }
+        const link = document.createElement('a');
+        link.href = this.state.qr_code;
+        link.download = 'qr_code.png';
+        link.click();
+    }
+
     async resetQRCode() {
         event.stopPropagation();
         const inputField = document.getElementById('qrInput');
@@ -50,10 +60,12 @@ class SystrayIcon extends Component {
             inputField.value = '';
             qrImage.src = '';
         }
-        return false;
+        const generateBtn = document.getElementById('generate-btn');
+        generateBtn.style.display = 'inline';
+
+        const downloadBtn = document.getElementById('download-btn');
+        downloadBtn.style.display = 'none';
     }
-
-
 }
 
 SystrayIcon.components = { Dropdown, DropdownItem };

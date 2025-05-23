@@ -13,10 +13,9 @@
                     <div class="p-2" style="font-size: 14px;">
                         <img id="qr_image" t-att-src="state.qr_code"  style="max-width: 100%;"/>
                     </div>
-                    <button t-on-click="generateQRCode">Generate QR Code</button>
+                    <button t-on-click="generateQRCode" style="display: inline;" id="generate-btn">Generate QR Code</button>
                     <button t-on-click="resetQRCode">Reset</button>
-                    <button t-on-click="downloadQRCode">Download</button>
-
+                    <button t-on-click="downloadQRCode" style="display: none;" id="download-btn">Download</button>
                 </div>
 
             </div>
