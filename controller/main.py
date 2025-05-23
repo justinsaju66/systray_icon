@@ -1,5 +1,4 @@
 # -- coding: utf-8 --
-import requests
 from odoo import http
 import qrcode
 import base64
