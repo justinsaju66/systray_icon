@@ -4,7 +4,8 @@
         <div class="o_MessagingMenu dropdown">
             <a class="dropdown-toggle o-no-caret" data-bs-toggle="dropdown" role="button"
                aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-qrcode"/>
+                <i class="fa fa-qrcode"
+                style="cursor: pointer; font-size: 25px;"/>
             </a>
             <div class="dropdown-menu dropdown-menu-end p-3" style="width: 300px;">
                 <div class="mb-2">
@@ -13,9 +14,9 @@
                     <div class="p-2" style="font-size: 14px;">
                         <img id="qr_image" t-att-src="state.qr_code"  style="max-width: 100%;"/>
                     </div>
-                    <button t-on-click="generateQRCode" style="display: inline;" id="generate-btn">Generate QR Code</button>
-                    <button t-on-click="resetQRCode">Reset</button>
-                    <button t-on-click="downloadQRCode" style="display: none;" id="download-btn">Download</button>
+                    <button class="btn btn-primary" t-on-click="generateQRCode" style="display: inline;" id="generate-btn">Generate QR Code</button>
+                    <button class="btn btn-secondary" t-on-click="resetQRCode">Reset</button>
+                    <button class="btn btn-primary" t-on-click="downloadQRCode" style="display: none;" id="download-btn">Download</button>
                 </div>
 
             </div>

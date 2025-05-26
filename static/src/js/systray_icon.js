@@ -35,7 +35,6 @@ class SystrayIcon extends Component {
         }
         const downloadBtn = document.getElementById('download-btn');
         downloadBtn.style.display = 'inline';
-
     }
 
     async downloadQRCode() {
@@ -68,7 +67,6 @@ class SystrayIcon extends Component {
     }
 }
 
-SystrayIcon.components = { Dropdown, DropdownItem };
 SystrayIcon.template = "systray_icon";
 export const systrayItem = {
     Component: SystrayIcon,
