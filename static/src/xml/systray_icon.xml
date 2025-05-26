@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="systray_icon" owl="1">
-        <div class="o_MessagingMenu dropdown">
+        <div>
             <a class="dropdown-toggle o-no-caret" data-bs-toggle="dropdown" role="button"
                aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-qrcode"
@@ -14,9 +14,9 @@
                     <div class="p-2" style="font-size: 14px;">
                         <img id="qr_image" t-att-src="state.qr_code"  style="max-width: 100%;"/>
                     </div>
-                    <button class="btn btn-primary" t-on-click="generateQRCode" style="display: inline;" id="generate-btn">Generate QR Code</button>
+                    <button class="btn btn-primary" t-on-click="generateQRCode"  style="display: inline; margin-right: 5px;" id="generate-btn">Generate QR Code</button>
                     <button class="btn btn-secondary" t-on-click="resetQRCode">Reset</button>
-                    <button class="btn btn-primary" t-on-click="downloadQRCode" style="display: none;" id="download-btn">Download</button>
+                    <button class="btn btn-primary" t-on-click="downloadQRCode" style="display: none; margin-left: 5px;" id="download-btn">Download</button>
                 </div>
 
             </div>
